@@ -1,0 +1,26 @@
+{
+  "name": "mylib-b",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/mylib-b/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/esbuild:esbuild",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/packages/mylib-b",
+        "main": "packages/mylib-b/src/index.ts",
+        "tsConfig": "packages/mylib-b/tsconfig.lib.json",
+        "assets": ["packages/mylib-b/*.md"]
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["packages/mylib-b/**/*.ts"]
+      }
+    }
+  },
+  "tags": []
+}

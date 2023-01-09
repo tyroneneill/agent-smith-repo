@@ -14,7 +14,10 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@agent-smith-repo/mylib-a": ["packages/mylib-a/src/index.ts"],
+      "@agent-smith-repo/mylib-b": ["packages/mylib-b/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

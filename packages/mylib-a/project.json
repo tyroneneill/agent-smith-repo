@@ -1,0 +1,31 @@
+{
+  "name": "mylib-a",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/mylib-a/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/esbuild:esbuild",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/packages/mylib-a",
+        "main": "packages/mylib-a/src/index.ts",
+        "tsConfig": "packages/mylib-a/tsconfig.lib.json",
+        "assets": ["packages/mylib-a/*.md"],
+        "format": ["esm", "cjs"],
+        "esbuildOptions": {
+          "banner": { "js": "// banner wrapper" },
+          "footer": { "js": "// footer wrapper" }
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["packages/mylib-a/**/*.ts"]
+      }
+    }
+  },
+  "tags": []
+}
